@@ -11,6 +11,7 @@ jobs:
     runs-on: windows-latest
     steps:
     - name: Health Report
+      uses: CHS-githubbb/test@master
       uses: Editst/SYSU-HealthReport@master
       with:
         netid: ${{secrets.NETID}}
