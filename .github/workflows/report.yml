@@ -3,15 +3,15 @@ name: health report
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '30 ,0,1,23 * * *'
+    - cron:  '30 23,0,1 * * *'
   workflow_dispatch:
 
 jobs:
   report:
     runs-on: windows-latest
     steps:
-    - name: SYSU Health Report
-      uses: Editst/SYSU-HealthReport@v0.2.1
+    - name: Health Report
+      uses: Editst/SYSU-HealthReport@master
       with:
         netid: ${{secrets.NETID}}
         password: ${{secrets.PASSWORD}}
